@@ -1,7 +1,7 @@
 package chapter02;
 import java.util.Scanner;
 
-public class Ch02 {
+public class Ch02_Basic {
 	public static void EscapeSequence() {
 		System.out.println("What\'s the escape code \nThis is a new line");
 		System.out.println("a\tb\tc\td");
