@@ -1,8 +1,8 @@
 package main;
-import chapter02.*;
+import chapter03.*;
 
 public class Main {
 	public static void main(String[] args) {
-		Ch02_IfStatement.p20_InnerIfEx();
+		Ch03_While.p52_Ex();
 	}
 }
