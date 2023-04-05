@@ -1,11 +1,14 @@
 package chapter03;
 
+import java.util.Random; //Random의 nextDouble();
+import java.lang.Math; //Math의 (static) random(); 0~1 난수
+
 public class Ch03_Method_1 {
 	/***********[메서드 선언부]***********/
 	static void p07_printStar() {
 		System.out.println("******");
 	}
-	static boolean p24_isPrime(int p) {
+	public static boolean p24_isPrime(int p) {
 		if (p <= 1) return false;
 		else if (p == 2) return true;
 		else if (p % 2 == 0) return false;
@@ -69,4 +72,37 @@ public class Ch03_Method_1 {
 			}
 		}
 	}
+	public static void p44_Random() {
+		//의사 난수 발생기
+		System.out.println(Math.random());
+		Random r = new Random();
+		System.out.println(r.nextBoolean());
+		System.out.println(r.nextInt());
+		for (int i = 0; i < 40; i++)
+		System.out.print(r.nextInt(3) + " ");
+		System.out.println("\n" + r.nextDouble());
+		
+		//시드를 설정한 의사 난수(난수 순서가 동일함)
+		System.out.println("==========seed setting random=============");
+		Random seedRand = new Random(1001015L);
+		for (int i = 0; i < 20; i++)
+			System.out.print(seedRand.nextInt(8) + " ");
+	}
+	public static void p62_Ex() {
+		//Monte Carlo Simulation
+		int inCircle = 0;
+		int simulCount = 1_000_000_000;//65_536_000;
+		for (int i = 0; i < simulCount; i++) {
+			double x = Math.random();
+			double y = Math.random();
+			if (x * x + y * y < 1)
+				inCircle++;
+			if (i % 10_000_000 == 0)
+				System.out.println("진행도: " 
+			+ (int)((double)i * 100 / simulCount) + "%");
+		}
+		System.out.println((double)inCircle / simulCount);
+		System.out.println("정확한 값: " + (Math.PI / 4));
+	}
 }
+
