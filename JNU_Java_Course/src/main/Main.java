@@ -4,6 +4,6 @@ import chapter04_1.*;
 
 public class Main {
 	public static void main(String[] args) {	
-		ExecuteEx.p10_Ex();
+		ExecuteEx.p85_Ex();
 	}
 }

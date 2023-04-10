@@ -1,4 +1,4 @@
-package chapter04_1.p10;
+package chapter04_1.classes;
 
 public class Person {
 	public String name;
