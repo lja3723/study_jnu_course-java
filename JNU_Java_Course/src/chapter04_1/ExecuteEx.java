@@ -91,4 +91,10 @@ public class ExecuteEx {
 		System.out.println(max(14,5,8));
 		System.out.println(max(4,5,18));
 	}
+	public static void classesEx1() {
+		Rect r1 = new Rect(2, 4);
+		Rect r2 = new Rect(3, 4);
+		r1.larger(r2).printMe();
+		System.out.println(" is larger.");
+	}
 }
