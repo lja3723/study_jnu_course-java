@@ -1,6 +1,8 @@
 package chapter04_2;
 
-import chapter04_2.classes.Triangle;
+import java.util.Scanner;
+
+import chapter04_2.classes.*;
 
 class Sample {
 	public int a;
@@ -130,10 +132,163 @@ public class ExecuteEx {
 		System.out.println("Height = " + t.getHeight());
 		System.out.println("Width = " + t.getWidth());
 		System.out.println("Area = " + t.area());
+		
+		ExecuteEx e = new ExecuteEx();
+	}	
+	public static void midterm_problem00() {
+		int count = 0;
+		
+		OUTER:
+		for (int i = 1; i < 5; i++) {
+			INNER:
+			for (int j = 1; j < 4; j++) {
+				if (j % 2 == 0)
+					continue INNER;
+				count += j;
+				if (i > 2)
+					break;
+			}
+		}
+		System.out.println(count);
 	}
-
-	//32페이지까지 시험범위!!!!
-	//다음주 월요일은 휴강!!
-	//시험은 과제에서만 나옴 (무조건! 다른거는 공부할 필요 X)
-	//시험 장소: 19일 11시 이전에 메시지로 공지예정
+	
+	static private int static_field;
+	public static void p34_static() {
+		//static: 필드 or 메서드 소속을 클래스로 제한
+		//객체와 무관한이라는 의미로 해석 가능
+		
+		//non-static:
+		//	객체마다 별도 존재(개인공간)
+		//static:
+		//	클래스당 1개만 생성(공유공간)
+		
+		//클래스 작성하면 디스크에 저장됨
+		//프로그램이 실행되면 클래스가 메인메모리에 로드(클래스 로더)
+		//new를 진행하면 클래스로부터 객체가 새롭게 생성됨
+		
+		//non-static -> static O 접근 가능
+		//static -> non-static X 접근 불가
+		//static은 this 키워드 사용 불가
+		
+		//접근법 1:
+		ExecuteEx.static_field = 0;
+		//접근법 2: (비권장)
+		ExecuteEx obj = new ExecuteEx();
+		obj.static_field = 0;
+	}
+	public static void p42_Ex() {
+		Scanner s = new Scanner(System.in);
+		System.out.println("환율(1달러 가격?)$ ");
+		double rate = s.nextDouble();
+		
+		CurrencyConverter.setRate(rate);
+		System.out.println("100만원은 $" + CurrencyConverter.toDollar(1_000_000) + "입니다.");
+		System.out.println("$100는 " + CurrencyConverter.toKWR(100) + "원입니다.");
+		s.close();
+	}
+	void p44_variable_type() {
+		//유효범위 따른 분류:
+			//클래스 단위
+			//메소드 단위
+			//문장 단위(블록)
+		//변수의 타입에 따른 분류:
+			//원시형
+			//참조형
+		//객체 생성 시에 포함되는가에 따른 분류:
+			//필드(객체 필드, 객체 변수)
+			//클래스 필드(정적 필드 (static))
+		
+		//필드
+			//클래스로부터 생성되는 객체마다 포함되는 변수
+			//static이 안붙음
+			//다른이름: Field, Instance Variable, Property, Attribute
+		
+		//클래스 필드
+			//크래스로부터 객체 생성될때 생성되는 객체에 포함되지 않는 변수
+			//static 붙음 (=정적 필드라고도 함)
+			//객체수 상관 없이 클래스당 한개만 존재, 모든 객체에 의해 공유됨
+			//객체 생성하지 않아도 사용가능
+	}
+	public static void p47_Ex() {
+		p47_Triangle[] triangle = new p47_Triangle[3];
+		triangle[0] = new p47_Triangle(2.5, 2.0);
+		triangle[1] = new p47_Triangle(3.5, 4.0);
+		triangle[2] = new p47_Triangle(2.0, 1.0);
+		
+		for (int i = 0; i < 3; i++) {
+			System.out.print("Serial Number: " + triangle[i].getSerialNo());
+			System.out.println(", Area: " + triangle[i].area());
+		}
+	}
+	public static void p51_InitField() {
+		//1: 초기화하지 않으면 타입의 기본값으로 자동 초기화
+		//2: 필드 선언문에서 초기화
+		//3: 생성자를 통한 값 설정으로 초기화
+		//4: 초기화 블록(Initialization Block)을 이용한 초기화
+		//5: 클래스 필드 초기화, 정적 초기화 블록(Static Initialization Block) 
+		
+		FieldInitEx ex = new FieldInitEx(1.0, 1);
+	}
+	public static void p54_FieldInitTimeEx() {
+		FieldInitTimeEx ex = new FieldInitTimeEx();
+	}
+	public static void p59_Ex() {
+		System.out.println(FieldInitEx.specialValue);
+	}
+	public static void p61_FieldInitTimeEx() {
+		System.out.println("=====객체 1 생성=====");
+		FieldInitTimeEx ex1 = new FieldInitTimeEx();
+		System.out.println("=====객체 2 생성=====");
+		FieldInitTimeEx ex2 = new FieldInitTimeEx();
+	}
+	void p63_static_import() {
+		//ppt 참고
+	}
+	void p66_final_class_field() {
+		//final class:
+			//클래스 앞에 붙임
+			//더 이상 클래스 상속이 불가능함을 표시
+		
+		//final field:
+			//초기화 방법:
+			//1: 변수 선언과 동시에 초기화
+			//2: 초기화 블록으로 초기화:
+			//3: 생성자에서 초기화
+	}
+	void p70_black_final_field() {
+		//선언할 때 값 대입 안하고 비워 둔 final 필드
+		//초기화 블록 or 생성자에서 값 대입해야 함
+	}
+	public void p75_toString() {
+		//Object 클래스에 정의, 어떤 클래스에서도 자동으로 포함됨
+		//객체를 String 형태로 반환
+		//기본값: 클래스이름@객체 -> hash code의 16진수 표현
+		String s = getClass().getName() + '@' + Integer.toHexString(hashCode());
+		System.out.println(s);
+		
+		//재정의 가능함
+		//pulic String toString(); 으로 정의하면 됨
+		
+		//println 메서드는 toString()을 자동으로 수행한다.
+	}
+	public static void p79_Ex() {
+		Point p = new Point(2, 3);
+		System.out.println(p.toString());
+		System.out.println(p);
+		System.out.println(p + "입니다.");
+		
+		//toString 주의사항
+			//객체를 String형태로 고의적으로 바꿔야할 특별한 경우가 아니면
+			//toString을 직접 호출하지 말 것
+			//toString 재정의시 println()을 포함할 필요 없음
+			//return String.format("%d", this.field); 같은 방법도 가능
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 }
