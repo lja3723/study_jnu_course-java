@@ -1,9 +1,9 @@
 package main;
 
-import chapter04_2.*;
+import chapter05.*;
 
 public class Main {
 	public static void main(String[] args) {	
-		ExecuteEx.p61_FieldInitTimeEx();
+		UpcastingExecuteEx.p34_Ex();
 	}
 }
