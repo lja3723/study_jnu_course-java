@@ -4,6 +4,6 @@ import chapter05.*;
 
 public class Main {
 	public static void main(String[] args) {	
-		PolymoExecuteEx.p55_Ex();
+		ExceptionEx.p31_Ex();
 	}
 }
