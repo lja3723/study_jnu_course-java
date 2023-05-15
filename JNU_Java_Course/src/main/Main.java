@@ -4,6 +4,6 @@ import chapter05.*;
 
 public class Main {
 	public static void main(String[] args) {	
-		ExceptionEx.p31_Ex();
+		ExceptionEx.p56();
 	}
 }

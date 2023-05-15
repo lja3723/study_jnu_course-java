@@ -2,60 +2,59 @@ package chapter05;
 
 import java.util.Scanner;
 
-import chapter05.classes_exception.P25_Ex;
-import chapter05.classes_exception.P26_Ex;
+import chapter05.classes_exception.*;
 
 public class ExceptionEx {
 	static void p() {}
 	static void q() throws Exception {}
 	
 	public static void p00_Ex() {}
-	void p04_callee°á°úº¸°í() {
-		//¿¹¿Ü´Â Callee°¡ Caller¿¡°Ô ÀÏÀÇ °á°ú¸¦ º¸°íÇÏ´Â ¹æ¹ı
-		//¸Ş¼Òµå ¹İÈ¯°ª°ú ¼º°İÀÌ ¸Å¿ì Èí»ç
-		//Á¤»óÀûÀ¸·Î ÀÛ¾÷À» ¸¶Ä¡¸é ¹İÈ¯°ªÀ» ¹İÈ¯ÇØ ÀÏÀÇ Ã³¸® °á°ú º¸°í(¹İÈ¯°ª X)
-		//ºñÁ¤»óÀûÀÎ »óÈ²ÀÌ ¹ß»ıÇÑ °æ¿ì ¿¹¿Ü¸¦ ¹ß»ı½ÃÄÑ ÀÏÀÇ Ã³¸® °á°ú º¸°íµÊ
-			//ºñÁ¤»ó »óÈ²ÀÇ ¸Ş¼Òµå ¸®ÅÏ°ª
-			//¿¹¿Ü´Â ºñÁ¤»ó »óÈ²À» Ç¥½ÃÇÏ´Â °´Ã¼
+	void p04_calleeê²°ê³¼ë³´ê³ () {
+		//ì˜ˆì™¸ëŠ” Calleeê°€ Callerì—ê²Œ ì¼ì˜ ê²°ê³¼ë¥¼ ë³´ê³ í•˜ëŠ” ë°©ë²•
+		//ë©”ì†Œë“œ ë°˜í™˜ê°’ê³¼ ì„±ê²©ì´ ë§¤ìš° í¡ì‚¬
+		//ì •ìƒì ìœ¼ë¡œ ì‘ì—…ì„ ë§ˆì¹˜ë©´ ë°˜í™˜ê°’ì„ ë°˜í™˜í•´ ì¼ì˜ ì²˜ë¦¬ ê²°ê³¼ ë³´ê³ (ë°˜í™˜ê°’ X)
+		//ë¹„ì •ìƒì ì¸ ìƒí™©ì´ ë°œìƒí•œ ê²½ìš° ì˜ˆì™¸ë¥¼ ë°œìƒì‹œì¼œ ì¼ì˜ ì²˜ë¦¬ ê²°ê³¼ ë³´ê³ ë¨
+			//ë¹„ì •ìƒ ìƒí™©ì˜ ë©”ì†Œë“œ ë¦¬í„´ê°’
+			//ì˜ˆì™¸ëŠ” ë¹„ì •ìƒ ìƒí™©ì„ í‘œì‹œí•˜ëŠ” ê°ì²´
 		
-		//¿¹¿ÜÃ³¸®ÀÇ 2°¡Áö À¯Çü
+		//ì˜ˆì™¸ì²˜ë¦¬ì˜ 2ê°€ì§€ ìœ í˜•
 		//
 	}
 	public static void p08_Ex() {
 		Scanner s = new Scanner(System.in);
-		System.out.println("³ª´­ ¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä:");
+		System.out.println("ë‚˜ëˆŒ ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”:");
 		int dividend = s.nextInt();
-		System.out.println("³ª´©´Â ¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä:");
+		System.out.println("ë‚˜ëˆ„ëŠ” ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”:");
 		int divide = s.nextInt();
-		System.out.println("°á°ú´Â: " + (dividend / divide));
+		System.out.println("ê²°ê³¼ëŠ”: " + (dividend / divide));
 		s.close();
 	}
 	public static void p14_tryCatch() {
 		try {
 			q();
-			// try ºí·Ï
-			// ¿¹¿Ü°¡ ¹ß»ıÇÒ °¡´É¼ºÀÌ ÀÖ´Â ½ÇÇà¹®
+			// try ë¸”ë¡
+			// ì˜ˆì™¸ê°€ ë°œìƒí•  ê°€ëŠ¥ì„±ì´ ìˆëŠ” ì‹¤í–‰ë¬¸
 		} catch (Exception e) {
-			// catch ºí·Ï
-			// MyException ¿¹¿Ü°¡ ¹ß»ıÇßÀ» ¶§ Ã³¸®ÇÒ ¸í·É
-			// Exception Handler¶ó°íµµ ºÎ¸§
+			// catch ë¸”ë¡
+			// MyException ì˜ˆì™¸ê°€ ë°œìƒí–ˆì„ ë•Œ ì²˜ë¦¬í•  ëª…ë ¹
+			// Exception Handlerë¼ê³ ë„ ë¶€ë¦„
 		}
-		// ´ÙÀ½¿¡ ÀÌ¾îÁö´Â ¹®Àå
+		// ë‹¤ìŒì— ì´ì–´ì§€ëŠ” ë¬¸ì¥
 	}
 	public static void p15_TryCatchFinally() {
-		try { // try ºí·Ï
+		try { // try ë¸”ë¡
 			q();
-			// ¿¹¿Ü°¡ ¹ß»ıÇÒ °¡´É¼ºÀÌ ÀÖ´Â ½ÇÇà¹®
-		} catch (Exception e) { // catch ºí·Ï		-> ¿©·¯°³ÀÇ catch¸¦ µÑ ¼ö ÀÖÀ½
-			// Exception Handler¶ó°íµµ ºÎ¸§ 
-			// MyException ¿¹¿Ü°¡ ¹ß»ıÇßÀ» ¶§ Ã³¸®ÇÒ ¸í·É
-		} finally { // finally ºí·Ï
-			//¿¹¿Ü ¹ß»ı ¿©ºÎ¿Í »ó°ü¾øÀÌ ¹«Á¶°Ç ½ÇÇàµÇ´Â ¹®Àå
-			// finally ºí·ÏÀº »ı·« °¡´É
+			// ì˜ˆì™¸ê°€ ë°œìƒí•  ê°€ëŠ¥ì„±ì´ ìˆëŠ” ì‹¤í–‰ë¬¸
+		} catch (Exception e) { // catch ë¸”ë¡		-> ì—¬ëŸ¬ê°œì˜ catchë¥¼ ë‘˜ ìˆ˜ ìˆìŒ
+			// Exception Handlerë¼ê³ ë„ ë¶€ë¦„ 
+			// MyException ì˜ˆì™¸ê°€ ë°œìƒí–ˆì„ ë•Œ ì²˜ë¦¬í•  ëª…ë ¹
+		} finally { // finally ë¸”ë¡
+			//ì˜ˆì™¸ ë°œìƒ ì—¬ë¶€ì™€ ìƒê´€ì—†ì´ ë¬´ì¡°ê±´ ì‹¤í–‰ë˜ëŠ” ë¬¸ì¥
+			// finally ë¸”ë¡ì€ ìƒëµ ê°€ëŠ¥
 		}
-		// ´ÙÀ½¿¡ ÀÌ¾îÁö´Â ¹®Àå
+		// ë‹¤ìŒì— ì´ì–´ì§€ëŠ” ë¬¸ì¥
 
-		//try-finallyµµ °¡´ÉÇÏ´Ù
+		//try-finallyë„ ê°€ëŠ¥í•˜ë‹¤
 	}
 	public static void p19_ExceptionEx() {
 		Scanner s = new Scanner(System.in);
@@ -73,16 +72,16 @@ public class ExceptionEx {
 	}
 	void p23_TryCatchFinallyDiscription() {
 	//try
-		//¿¹¿Ü¸¦ ¹ß»ı½ÃÅ°´Â ¸Ş¼Òµå¸¦ È£ÃâÇÏ´Â °÷
-		//¿¹¿Ü¿Í °ü·Ã ¾ø´Â ¹®Àå ÀÖ¾îµµ µÊ
+		//ì˜ˆì™¸ë¥¼ ë°œìƒì‹œí‚¤ëŠ” ë©”ì†Œë“œë¥¼ í˜¸ì¶œí•˜ëŠ” ê³³
+		//ì˜ˆì™¸ì™€ ê´€ë ¨ ì—†ëŠ” ë¬¸ì¥ ìˆì–´ë„ ë¨
 	//catch
-		//È£ÃâÇÑ ¸Ş¼Òµå°¡ ¹ß»ı½ÃÅ² ¿¹¿Ü¸¦ ¹Ş¾Æ Ã³¸®ÇÏ´Â °÷
-		//==Exception Handler¶ó°íµµ ÇÔ
-		//¿©±â¿¡¼­´Â Àâ¾Æ¾ß ÇÒ ¿¹¿Ü°¡ ´ÙÀ½°ú °°Àº Çü½ÄÀ¸·Î Ç¥½ÃµÇ¾î¾ß ÇÔ
-			//Àâ¾Æ¾ß ÇÒ ¿¹¿Ü Å¸ÀÔ + º¯¼ö¸í
-		//catch ºí·Ï¿¡¼­´Â ¹ß»ıÇÑ ¿¹¿Ü ¹ß»ı »óÈ²À» ºĞ¼®ÇÏ±â À§ÇØ
-		//getMessage(), printStackTrace()¸¦ È£ÃâÇÏ±âµµ ÇÔ
-			//printStackTrace(): ¿¹¿Ü ¹ß»ı»óÈ²ÀÇ ½ºÅÃÀ» Ãâ·ÂÇØÁÜ
+		//í˜¸ì¶œí•œ ë©”ì†Œë“œê°€ ë°œìƒì‹œí‚¨ ì˜ˆì™¸ë¥¼ ë°›ì•„ ì²˜ë¦¬í•˜ëŠ” ê³³
+		//==Exception Handlerë¼ê³ ë„ í•¨
+		//ì—¬ê¸°ì—ì„œëŠ” ì¡ì•„ì•¼ í•  ì˜ˆì™¸ê°€ ë‹¤ìŒê³¼ ê°™ì€ í˜•ì‹ìœ¼ë¡œ í‘œì‹œë˜ì–´ì•¼ í•¨
+			//ì¡ì•„ì•¼ í•  ì˜ˆì™¸ íƒ€ì… + ë³€ìˆ˜ëª…
+		//catch ë¸”ë¡ì—ì„œëŠ” ë°œìƒí•œ ì˜ˆì™¸ ë°œìƒ ìƒí™©ì„ ë¶„ì„í•˜ê¸° ìœ„í•´
+		//getMessage(), printStackTrace()ë¥¼ í˜¸ì¶œí•˜ê¸°ë„ í•¨
+			//printStackTrace(): ì˜ˆì™¸ ë°œìƒìƒí™©ì˜ ìŠ¤íƒì„ ì¶œë ¥í•´ì¤Œ
 	//finally (p29)
 	}
 	public static void p25_Ex() {
@@ -103,7 +102,7 @@ public class ExceptionEx {
 	static void showUpTo5(){
 		int count = 0;
 		try{
-			int k = 5; //Áö¿ªº¯¼ö·Î try¿¡¼­¸¸ »ç¿ë °¡´É
+			int k = 5; //ì§€ì—­ë³€ìˆ˜ë¡œ tryì—ì„œë§Œ ì‚¬ìš© ê°€ëŠ¥
 			
 			while(true){
 				if(++count  > 5) 
@@ -115,5 +114,134 @@ public class ExceptionEx {
 			System.out.println( (count - 1) + " characters processed");
 		}
 	}
-
+	public static void p34_Ex() {
+		Scanner rd = new Scanner(System.in);
+		int divisor = 0;
+		int dividend = 0;
+		
+		System.out.print("ë‚˜ë‰¨ìˆ˜ë¥¼ ì…ë ¥í•˜ì‹œì˜¤:");
+		dividend = rd.nextInt();
+		System.out.print("ë‚˜ëˆ—ìˆ˜ë¥¼ ì…ë ¥í•˜ì‹œì˜¤:");
+		divisor = rd.nextInt();
+		try {
+			System.out.println(dividend+"ë¥¼ "+divisor+"ë¡œ ë‚˜ëˆ„ë©´ ëª«ì€ "+ dividend/divisor+"ì…ë‹ˆë‹¤.");
+		} catch (ArithmeticException e) {
+			System.out.println("0ìœ¼ë¡œ ë‚˜ëˆŒ ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
+		}		
+	}
+	public static void p35_Ex() {
+		int[] intArray = new int[5];
+		intArray[0] = 0;
+		try {
+			for (int i = 0; i < 5; i++) {
+				intArray[i+1] = i+1 + intArray[i];
+				System.out.println("intArray["+i+"]"+"="+intArray[i]);
+			}
+		}
+		catch (ArrayIndexOutOfBoundsException e) {
+			System.out.println("ë°°ì—´ì˜ ì¸ë±ìŠ¤ê°€ ë²”ìœ„ë¥¼ ë²—ì–´ë‚¬ìŠµë‹ˆë‹¤.");
+		}
+	}
+	public static void p36_Ex() {
+		String[] stringNumber = {"23", "12", "998", "3.141592"}; 
+		try {
+			for (int i = 0; i < stringNumber.length; i++) {
+				int j = Integer.parseInt(stringNumber[i]);
+				System.out.println("ìˆ«ìë¡œ ë³€í™˜ëœ ê°’ì€ " + j);
+			}
+		}
+		catch (NumberFormatException e) {
+			System.out.println("ì •ìˆ˜ë¡œ ë³€í™˜í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
+		}
+	}
+	void p43_ExceptionHierarchy() {
+	//Throwable : ì˜ˆì™¸ ìµœìƒìœ„ í¬ë˜ìŠ¤; ëª…ì¹­ì´ ì¸í„°í˜ì´ìŠ¤ê°™ì§€ë§Œ(-able) í´ë˜ìŠ¤ì„
+		//Error	:ìë°” ì‹œìŠ¤í…œ ë‚´ë¶€ ì—°ë½ë°©ì‹
+		//Exception	:í”„ë¡œê·¸ë¨ ì°©ì˜¤ë¡œ ì¸í•œ ì˜ˆì™¸  í‘œì‹œ
+			//RuntimeException
+	}
+	void p44_Throwable() {
+		//public Throwable()
+		//public Throwable(String  msg )
+		//public String getMessage()
+		//public void printStackTrace() 
+			//: ì˜ˆì™¸ê°€ ë°œìƒí•œ ë©”ì†Œë“œê¹Œì§€ì˜ í˜¸ì¶œ  ìˆœì„œ(Call Stack)ë¥¼ ì—­ìœ¼ë¡œ ë³´ì—¬ ì¤€ë‹¤
+			//main() â€“  a â€“ b â€“ c ìˆœìœ¼ë¡œ í˜¸ì¶œë˜ì—ˆë‹¤ë©´ c â€“ b â€“ a â€“ main() ìˆœ
+		//public String toString()
+	}
+	void p45_SelfDefinedException() {
+		//Exceptionì„ ìƒì†í•˜ì.
+		
+		//public Exception()
+		//public Exception(String message)
+		//msgëŠ” ì˜ˆì™¸ë¥¼ ì„¤ëª…í•˜ëŠ” ë¬¸ìì—´
+	}
+	public static void p47_Ex() {
+		try {
+			excepMethod();
+		} catch (Exception e) {
+			System.out.println("Exception occurred: " + e.getMessage());
+			e.printStackTrace();
+		}
+	}
+	public static void excepMethod() throws Exception {
+		throw new P45_MyException("Exception from excepMethod()" );
+	}	
+	public static void p48_Ex() {
+		try {
+			excepMethod2();
+		} catch (P48_UserException e) {
+			System.out.println("Exception: " + e.getMessage());
+			System.out.println(e.getMsg());
+		}
+	}
+	public static void excepMethod2() throws P48_UserException {
+		throw new P48_UserException("msg via getMessage()", "I caught a Message");
+	}
+	void p49_ì˜ˆì™¸ë˜ì§€ëŠ”ë©”ì†Œë“œì •ì˜() {
+		//ë©”ì†Œë“œ í—¤ë”ì— ë˜ì§ˆ ì˜ˆì™¸ë¥¼ í‘œì‹œí•¨
+		//throwsì™€ í•¨ê»˜ ë˜ì§ˆ ì˜ˆì™¸ íƒ€ì… ì„ ì–¸
+		//ë©”ì†Œë“œ ëª¸ì²´ì—ì„œ ì˜ˆì™¸ë¥¼ ë˜ì§„ë‹¤
+			// ì§ì ‘ì ì¸ ë°©ë²•: throwë¬¸ìœ¼ë¡œ ë˜ì§
+			// ê°„ì ‘ì  ë°©ë²•: tryë¬¸ìœ¼ë¡œ ê°ì‹¸ì§€ ì•Šê³  ì˜ˆì™¸ë¥¼ ë°œìƒì‹œí‚¤ëŠ” ë©”ì†Œë“œë¥¼ í˜¸ì¶œ
+	}
+	public static void p53_Ex() {
+		try {
+			new P53_Ex().run();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+	public static void p56() {
+		//throwê°€ ë˜ë©´ ê·¸ ë°‘ ì½”ë“œëŠ” ì‹¤í–‰X -> returnê³¼ ë˜‘ê°™ë‹¤
+		//throw new Exception();
+		
+		try {
+			System.out.println(1);
+			int a = 4 / 0;
+			System.out.println(2);
+		}
+		finally {
+			System.out.println(3);
+		}
+		System.out.println(4);
+	}
+	void p77_ë¹„ê²€ì¦Exception() {
+		//RuntimeException
+		//Error
+		//ê·¸ í•˜ìœ„í´ë˜ìŠ¤
+		
+		//ì´ë“¤ì€ ì»´íŒŒì¼ëŸ¬ê°€ ê²€ì¦í•˜ì§€ ì•ŠìŒ(ì»´íŒŒì¼ ì—ëŸ¬ X)
+		//ë¹„ê²€ì¦ ì˜ˆì™¸ëŠ” tryë¡œ ê°ì‹¸ì§€ ì•Šì•„ë„ ì»´íŒŒì¼ ì—ëŸ¬ ë°œìƒí•˜ì§€ ì•ŠìŒ
+		//throwsë„ ì‘ì„± ì•ˆí•´ë„ ë¨
+	}
+	void p82_ìƒì†ê³¼ìƒì„±ìì™€Exception() {
+		//ë©”ì†Œë“œ ì˜¤ë²„ë¼ì´ë”© -> ìƒìœ„ ë©”ì†Œë“œë³´ë‹¤ ë” ë§ì€ ì˜ˆì™¸ ë˜ì§€ë©´ ì•ˆë¨
+		//ë” ìƒìœ„ì˜ ì˜ˆì™¸ë„ ë˜ì§€ë©´ X
+		
+		//ìƒì„±ìì™€ ì˜ˆì™¸
+		//ìƒì„±ìì—ì„œ ì˜ˆì™¸ ì„ ì–¸ ê°€ëŠ¥(ë°˜í™˜ íƒ€ì…ì€ ì—¬ì „íˆ X)
+	}
+	
+	
 }
