@@ -1,4 +1,4 @@
-package chapter05;
+package chapter05.executes;
 
 import chapter05.classes_poly.*;
 import chapter05.classes_poly.shape.*;
