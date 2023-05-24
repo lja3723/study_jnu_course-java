@@ -1,9 +1,9 @@
 package main;
 
-import chapter05.*;
+import chapter06.*;
 
 public class Main {
 	public static void main(String[] args) {	
-		CompositionEx.p07_Ex();
+		NestedClassEx.p19_NamedMemberClass();
 	}
 }
