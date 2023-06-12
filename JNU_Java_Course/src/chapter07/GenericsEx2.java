@@ -69,6 +69,11 @@ public class GenericsEx2 {
 		list.add(new RuntimeException());
 		list.add(new ArithmeticException());
 	}
+	void p48_PECS() {
+		//PECS: Producer Extends Consumer Super
+		//get을 하려면 extends를 사용 => Producer
+		//put을 하려면 super를 사용 => Consumer		
+	}
 }
 
 class Store<T extends Number> {
